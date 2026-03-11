@@ -14,7 +14,7 @@ To install `jj`, please refer to [this page](https://docs.jj-vcs.dev/latest/inst
 
 ### Linux/MacOS
 
-1. Ensure [`tmux`](https://github.com/tmux/tmux/wiki) is installed.
+1. Ensure [`tmux`](https://github.com/tmux/tmux/wiki) and [`watchexec`](https://github.com/watchexec/watchexec) is installed.
    For MacOS, it can be easily installed by `brew install tmux` if you use [`homebrew`](https://brew.sh/).
 2. Copy and paste [this](https://github.com/OzelotVanilla/jjdev/blob/main/linux_profile.sh) to your shell profile.
 3. Do not forget to `source` it before `jjdev` !
