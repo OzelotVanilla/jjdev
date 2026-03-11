@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+jjdev__script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+jjdev__lib_dir="${jjdev__script_dir}/../lib"
+
+# shellcheck source=../lib/common.sh
+source "${jjdev__lib_dir}/common.sh"
+
+jjdev__require_command tmux
+jjdev__require_jj_repo
+
+root_dir="$(jjdev__get_root_dir)"
+session_name="$(jjdev__get_session_name "$root_dir")"
+
+tmux kill-session -t "$session_name"

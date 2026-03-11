@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+jjdev__script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+jjdev__lib_dir="${jjdev__script_dir}/../lib"
+
+source "${jjdev__lib_dir}/common.sh"
+source "${jjdev__lib_dir}/tmux.sh"
+
+jjdev__main "$@"
