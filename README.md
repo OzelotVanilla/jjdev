@@ -2,6 +2,8 @@
 A command creating a split jujutsu (vcs) development environment in your terminal,
  while the left panel is terminal, the right side watches your changes and runs `jj log`.
 
+![Example Picture](https://github.com/OzelotVanilla/jjdev/blob/main/pic/example.png)
+
 ## How to use ?
 
 Final Target: In your terminal, input `jjdev` to open a split-view of terminal and `jj log`.
