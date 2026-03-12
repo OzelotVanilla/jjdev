@@ -19,6 +19,15 @@ To install `jj`, please refer to [this page](https://docs.jj-vcs.dev/latest/inst
 2. Copy and paste [this](https://github.com/OzelotVanilla/jjdev/blob/main/linux_profile.sh) to your shell profile.
 3. Do not forget to `source` it before `jjdev` !
 
+### MacOS (`brew`)
+
+Available on `brew`, install by running these commands:
+
+```bash
+brew tap OzelotVanilla/jjdev
+brew install OzelotVanilla/jjdev/jjdev
+```
+
 ### Windows
 
 1. Ensure powershell is updated to `7.x` or above. If you have `winget`, use this to install.
