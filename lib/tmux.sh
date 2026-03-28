@@ -11,11 +11,11 @@ jjdev__tmux_create_session()
     local session_name="$1"
     local root_dir="$2"
     local watch_command="$3"
+    local shell="${SHELL:-/bin/bash}"
 
-    tmux new-session -d -s "$session_name" -c "$root_dir" "env JJDEV_SESSION=1 zsh"
+    tmux new-session -d -s "$session_name" -c "$root_dir" "env JJDEV_SESSION=1 $shell -l"
     tmux split-window -h -t "$session_name" -c "$root_dir"
     printf 'DEBUG: sending watch command\n' >&2
-    # tmux send-keys -t "${session_name}:0.1" "env JJDEV_SESSION=1 zsh -lc ${(q-)watch_command}" C-m
     tmux send-keys -t "${session_name}:0.1" "watchexec --quiet --clear --restart --watch=.jj/repo/op_heads/heads --ignore-nothing --wrap-process=none -- $watch_command" C-m
     tmux select-pane -t "${session_name}:0.0"
 }
