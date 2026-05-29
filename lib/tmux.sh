@@ -16,7 +16,7 @@ jjdev__tmux_create_session()
     tmux new-session -d -s "$session_name" -c "$root_dir" "env JJDEV_SESSION=1 $shell -l"
     tmux split-window -h -t "$session_name" -c "$root_dir"
     printf 'DEBUG: sending watch command\n' >&2
-    tmux send-keys -t "${session_name}:0.1" "watchexec --quiet --clear --restart --watch=.jj/repo/op_heads/heads --ignore-nothing --wrap-process=none -- $watch_command" C-m
+    tmux send-keys -t "${session_name}:0.1" "$watch_command" C-m
     tmux select-pane -t "${session_name}:0.0"
 }
 
@@ -33,7 +33,7 @@ jjdev__main()
         printf 'Detach first: Ctrl-b d\n' >&2
         return 1
     fi
-    
+
     local root_dir
     local session_name
     local watch_command
