@@ -28,6 +28,12 @@ jjdev__tmux_attach_session()
 
 jjdev__main()
 {
+    if [ -n "${JJDEV_SESSION:-}" ] || [ -n "${TMUX:-}" ]; then
+        printf '\033[31merror\033[0m: jjdev is already running inside tmux/jjdev session.\n' >&2
+        printf 'Detach first: Ctrl-b d\n' >&2
+        return 1
+    fi
+    
     local root_dir
     local session_name
     local watch_command
